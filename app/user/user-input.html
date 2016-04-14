@@ -1,0 +1,39 @@
+
+
+<form name="user">
+<fieldset class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" ng-model="user.name1" placeholder="name">
+  </fieldset>
+  
+  <fieldset class="form-group">
+    <label>Email address</label>
+    <input type="email" class="form-control" ng-model="user.email" placeholder="Enter email">
+  </fieldset>
+  <fieldset class="form-group">
+    <label>contact no:</label>
+    <input type="number" class="form-control" ng-model="user.mobile" placeholder="mobile no">
+  </fieldset>
+  
+  <fieldset class="form-group">
+    <label>Address</label>
+    <textarea class="form-control" ng-model="user.address" placeholder="address"></textarea>
+  </fieldset>
+  <fieldset class="form-group">
+    <label>Image</label>
+<div class="row"><div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+    ngf-accept="'image/*'">Choose file</div></div>  </fieldset>
+  <fieldset class="form-group">
+    <label>Date of Birth</label>
+    <input type="date" class="form-control" ng-model="user.dob">
+  </fieldset>
+
+  
+  <button type="submit" ng-click="submit()" class="btn btn-primary">Submit</button>
+  <button type="submit" ng-click="reset()" class="btn btn-primary">Reset</button>
+</form>
+
+            
+          
+           
+       

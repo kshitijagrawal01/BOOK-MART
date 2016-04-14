@@ -1,0 +1,38 @@
+<div class="row">
+	   <div class="kode-blog-detail">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="images/blog-detail-img.png" alt=""></a>
+                            <div class="kode-blog-date">
+                                <span>{{blog.date | date:MM}}</span>
+                            </div>
+                        </div>
+                        <div class="kode-detail-meta">
+                            <!--USER PROFILE START-->
+                            <div class="kode-user">
+                                <div class="user-thumb">
+                                    <a href="#"><img src="images/user1.png" alt=""></a>
+                                </div>
+                                <div class="user-profile">
+                                    <h4>Anni Hollin, <span>Author</span></h4>
+                                    <p>Books designer</p>
+                                </div>
+                            </div>
+                            <!--USER PROFILE END-->
+                             <div class="blog-meta">
+                                <ul>
+                                    <li><a href="#">{{blog.subject}}</a></li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h2>{{blog.title}}</h2>
+                            <blockquote>
+                                <p>{{blog.shortdescription}}</p>
+                            </blockquote>
+                            <p>{{blog.body}}</p>
+                        </div>
+                        
+                    </div>
+</div>
+

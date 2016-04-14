@@ -1,0 +1,150 @@
+ <!--CONTENT START-->
+    <div class="kode-content padding-tb-50">
+    	<div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!--BOOK DETAIL START-->
+                    <div class="lib-book-detail">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="kode-thumb">
+                                    <img ng-src="{{data.imageurl}}"  alt="{{data.imageurl}}">
+                                </div>
+                            </div>
+                           
+                            <div class="col-md-7">
+                                <div class="kode-text">
+                                	<h2>{{ data.name }}</h2>
+                                    <div class="product-review" ng-switch on="data.star">
+                                        <div class="rating" ng-switch-when="1">
+                                            <span>☆</span>
+                                        </div>
+                                        <div class="rating" ng-switch-when="2">
+                                            <span>☆</span><span>☆</span>
+                                        </div>
+                                        <div class="rating" ng-switch-when="3">
+                                            <span>☆</span><span>☆</span><span>☆</span>
+                                        </div>
+                                        <div class="rating" ng-switch-when="4">
+                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                        </div>
+                                        <div class="rating" ng-switch-when="5">
+                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                        </div>
+                                        <div class="rating" ng-switch-default>
+                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                        </div>
+                                        <span>{{data.reviews.length}} user reviews</span>
+                                        
+                                    </div>
+                                    <div class="product-price">
+                                        <h4>Original Price.{{data.price}} Rented Price:{{data.price*3/5}}</h4>
+                                        <p>Author : <span class="color">{{data.author}}</span></p>
+                                    </div>
+                                    <div class="book-text">
+                                    	<p> {{data.description}}</p>
+                                    </div>
+									<div class="book-text">
+                                    	<p><b>Check Pin Code Availability</b></p>
+										<br>
+										<form class="form-inline">
+									  
+										  <div class="form-group">
+											<label for="exampleInputEmail2">Pin Code</label>
+											<input type="text" class="form-control" id="exampleInputEmail2" placeholder="Enter Pin Code" ng-model="pin" >
+										  </div>
+										  <button type="submit" class="btn btn-primary" ng-click="checkpin()">Check</button>
+										  <p style="color:#32B5F3">{{msg}}</p>
+										</form>
+                                    </div>
+									
+                                    <div class="book-text">
+                                    	<p>Category: {{data.category}}.</p>
+                                        <p>Tag: books.</p>
+                                        <p>Author: {{data.author}}</p>
+                                        <p>Publisher: {{data.publisher}}</p>
+                                        <p>Product ID: {{data._id}}</p>
+                                    </div>
+                                    <a href="#" class="add-to-cart" ng-click="addtocart()">Add To Cart</a>
+                                    <a href="#" class="add-to-cart">Add To Wishlist</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--BOOK DETAIL END-->
+                    <!--PRODUCT REVIEW TABS START-->
+                    <div class="product-review-tabs">
+                        <!--NAV TABS START-->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#Description " aria-controls="Description" role="tab" data-toggle="tab">Description </a></li>
+                            <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
+                           
+                        </ul>
+                        <!--NAV TABS END-->
+                        <!--TAB PANEL START-->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="Description">
+                                <p>{{data.descriptions}}</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="reviews">
+                                <div class="kode-comments">
+                                <label>Stars:</label>
+                 				<select class="form-control" ng-model="star">
+                 					<option value="1">1</option>
+                 					<option value="2">2</option>
+                 					<option value="3">3</option>
+                 					<option value="4">4</option>
+                 					<option value="5">5</option>
+                 				</select>
+                 				<label>Comment:</label>
+                                <textarea class="form-control" ng-model="comm" ng-keypress="comment($event)"></textarea>
+                                <br>
+                                <br>
+                                    <ul ng-repeat="obj in data.reviews">
+                                        <li>
+                                            <div class="kode-thumb">
+                                                <a href="#"><img alt="" src="images/author14.png"></a>
+                                            </div>
+                                            <div class="kode-text">
+                                                <h4>{{userval[$index][0].name}}</h4>
+                                                <p class="designation">JUNE 20, 2015</p>
+                                               
+                                                <span class="product-review" ng-switch on="obj.rating">
+		                                        <div class="rating" ng-switch-when="1">
+		                                            <span>☆</span>
+		                                        </div>
+		                                        <div class="rating" ng-switch-when="2">
+		                                            <span>☆</span><span>☆</span>
+		                                        </div>
+		                                        <div class="rating" ng-switch-when="3">
+		                                            <span>☆</span><span>☆</span><span>☆</span>
+		                                        </div>
+		                                        <div class="rating" ng-switch-when="4">
+		                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+		                                        </div>
+		                                        <div class="rating" ng-switch-when="5">
+		                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+		                                        </div>
+                                       
+                                    </span>
+                                                <p>{{obj.review}}</p>
+                                                <span><a class="reply" ng-init="disabled=false" ng-click="likes(data._id,obj.userid,$index)" ng-disabled="disabled">{{obj.likes}} like</a></span>
+                                                <span><a class="reply" ng-click="dislikes(data._id,obj.userid,$index)">{{obj.dislikes}} dislike</a></span>
+                                            </div>
+                                        </li>
+                                        <br>
+                                    </ul>
+                                </div>                        
+                            </div>
+                          
+                          
+                        </div>
+                        <!--TAB PANEL END-->
+                    </div>
+                    <!--PRODUCT REVIEW TABS END-->
+                   
+                </div>
+            </div>
+        </div>
+        </div>

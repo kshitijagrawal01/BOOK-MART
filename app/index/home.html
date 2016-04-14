@@ -1,0 +1,159 @@
+
+    <section class="gray-bg kode-best-sellter-sec">
+        <div class="container">
+                <!--SECTION CONTENT START-->
+                <div class="section-content">
+                    <h2><span>What Everyone is Reading</span></h2>
+                    <p>The Book Guide and the Book Library has one of the top sellers books with them. Those books which are sold with in few days and still available in our stock which you can get with us easily.</p>
+                </div>
+                <!--SECTION CONTENT END-->
+            <div class="row">
+                    <!--PRODUCT GRID START-->
+                <div ng-repeat="mostviewed in allbooks">
+
+                    <div class="col-md-3">
+                        <div class="best-seller-pro">
+                            <figure>
+                                <img ng-src="{{mostviewed.imageurl}}" alt="" height="120" width="42">
+                            </figure>
+                            <div class="kode-text">
+                                <h3>{{mostviewed.name}}</h3>
+                            </div>
+                            <div class="kode-caption">
+                                <h3>Broken Visions Jessica</h3>
+                                <div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+                                <p>Jessica Sorensen</p>
+                                <p class="price">{{mostviewed.price}}</p>
+                                  <a class="add-to-cart()" ng-click="cart({bookid:mostviewed._id})">DETAIL INFO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!--PRODUCT GRID END-->
+                                
+            </div>  
+        </div>
+    </section>
+            
+          
+           
+       
+
+        <section class="gray-bg kode-best-sellter-sec">
+        <div class="container">
+                <!--SECTION CONTENT START-->
+                <div class="section-content">
+                    <h2><span>Science and technology</span></h2>
+                    <p>The Book Guide and the Book Library has one of the top sellers books with them. Those books which are sold with in few days and still available in our stock which you can get with us easily.</p>
+                </div>
+                <!--SECTION CONTENT END-->
+            <div class="row">
+                    <!--PRODUCT GRID START-->
+                <div ng-repeat="science in categorybooks">
+
+                    <div class="col-md-3">
+                        <div class="best-seller-pro">
+                            <figure>
+                                <img ng-src="{{science.imageurl}}" alt="" height="120" width="42">
+                            </figure>
+                            <div class="kode-text">
+                                <h3>{{science.name}}</h3>
+                            </div>
+                            <div class="kode-caption">
+                                <h3>Broken Visions Jessica</h3>
+                                <div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+                                <p>Jessica Sorensen</p>
+                                <p class="price">{{science.price}}</p>
+                                 <a class="add-to-cart()" ng-click="cart({bookid:science._id})" >DETAIL INFO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!--PRODUCT GRID END-->
+                                
+            </div>  
+        </div>
+    </section>
+
+    <section class="gray-bg kode-best-sellter-sec">
+        <div class="container">
+                <!--SECTION CONTENT START-->
+                <div class="section-content">
+                    <h2><span>Exam preparation books</span></h2>
+                    <p>The Book Guide and the Book Library has one of the top sellers books with them. Those books which are sold with in few days and still available in our stock which you can get with us easily.</p>
+                </div>
+                <!--SECTION CONTENT END-->
+            <div class="row">
+                    <!--PRODUCT GRID START-->
+                    <div ng-if="categoryexambooks.length<=0"><div class="section-content"><h2><div style="color:red">There are no more books</div></h2></div></div>
+                <div ng-repeat="preparation in categoryexambooks">
+
+                    <div class="col-md-3">
+                        <div class="best-seller-pro">
+                            <figure>
+                                <img ng-src="{{preparation.imageurl}}" alt="" height="120" width="42">
+                            </figure>
+                            <div class="kode-text">
+                                <h3>{{preparation.name}}</h3>
+                            </div>
+                            <div class="kode-caption">
+                                <h3>Broken Visions Jessica</h3>
+                                <div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+                                <p>Jessica Sorensen</p>
+                                <p class="price">{{preparation.price}}</p>
+                                  <a class="add-to-cart()" ng-click="cart({bookid:preparation._id})" >DETAIL INFO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!--PRODUCT GRID END-->
+                                
+            </div>  
+        </div>
+    </section>
+            
+          
+           
+       
+
+        
+    <section class="gray-bg kode-best-sellter-sec">
+        <div class="container">
+                <!--SECTION CONTENT START-->
+                <div class="section-content">
+                    <h2><span>Most viewed Blogs</span></h2>
+                    <p>The Book Guide and the Book Library has one of the top sellers books with them. Those books which are sold with in few days and still available in our stock which you can get with us easily.</p>
+                </div>
+                <!--SECTION CONTENT END-->
+            <div class="row" ng-init="start = 2">
+                    <!--PRODUCT GRID START-->
+                    <div ng-if="users.length<=0"><div class="section-content"><h2><div style="color:red">There are no more books</div></h2></div></div>
+                <div ng-repeat="user in users">
+    <div class="col-md-4 col-sm-6" ng-repeat="blog in user.blog" ng-init="current = $parent.start;">
+        
+                    <div class="kode-single-blog">
+                        <figure>
+
+                            <a  ui-sref="/blog-full({blogid:blog._id})"><img ng-src="images/blog-single{{(current+$index)%7}}.png" alt="" height="120" width="42"></a>
+                        </figure>
+                        <div class="kode-text">
+                            <div class="kode-date">
+                                
+                                <span>{{blog.date | date:MM}}</span>
+                            </div>
+                            <h3>{{blog.title}}</h3>
+                            <p>{{blog.subject}}</p>
+                        </div>
+                    </div> 
+                </div>
+          </div> 
+        </div>
+        </div>
+    </section>
+            

@@ -1,0 +1,23 @@
+<div class="row" ng-init="start = 2">
+	<div ng-repeat="user in users">
+	<div class="col-md-4 col-sm-6" ng-repeat="blog in user.blog" ng-init="current = $parent.start;">
+		
+                    <div class="kode-single-blog">
+                        <figure>
+
+                        	<a ui-sref="/blog-full({blogid:blog._id})"><img ng-src="images/blog-single{{(current+$index)%7}}.png" alt=""></a>
+                        </figure>
+                        <div class="kode-text">
+                        	<div class="kode-date">
+                            	
+                                <span>{{blog.date | date:MM}}</span>
+                            </div>
+                        	<h3>{{blog.title}}</h3>
+                            <p>{{blog.subject}}</p>
+                        </div>
+                    </div> 
+                </div>
+          </div> 
+
+</div>
+

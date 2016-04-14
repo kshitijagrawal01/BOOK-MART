@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="book-store">
+
+<head >
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Book Store - Book Guide Author, Publication and Store</title>
+
+<link href="style.css" rel="stylesheet">
+
+<link href="css/themetypo.css" rel="stylesheet">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/color.css" rel="stylesheet">
+
+<link href="css/font-awesome.min.css" rel="stylesheet">
+
+<link href="css/jquery.bxslider.css" rel="stylesheet">
+
+<link href="css/bootstrap-slider.css" rel="stylesheet">
+
+<link href="css/widget.css" rel="stylesheet">
+
+<link href="css/shortcode.css" rel="stylesheet">
+
+<link href="css/responsive.css" rel="stylesheet">
+<script src='./node_modules/jquery/dist/jquery.js'></script>
+
+<link href="js/dl-menu/component.css" rel="stylesheet">
+<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+<link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
+<script src='./node_modules/angular/angular.js'></script>
+
+<script src='./app/app.js'></script>
+<script src='./app/blog/blog-controller.js'></script>
+<script src='./app/book/book-controller.js'></script>
+<script src='./app/login/login-controller.js'></script>
+<script src='./app/login/fblogin-controller.js'></script>
+<script src='./app/signup/signup-controller.js'></script>
+<script type="text/javascript" src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script src = "./node_modules/ng-file-upload/dist/ng-file-upload.js">  </script>
+<script src = "./node_modules/ng-file-upload/dist/ng-file-upload-all.js">  </script>
+<script src = "./node_modules/ng-file-upload/dist/ng-file-upload-shim.js">  </script>
+<!-- Initialize the plugin: -->
+<!-- /*
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#example-getting-started').multiselect();
+    });
+</script>*/ -->
+
+<!-- user-input controller
+ -->
+ 
+</head>
+<body>
+
+<div class="wrapper">
+
+    <header>
+        <div class="top-strip">
+            <div class="container">
+                <div class="site-info">
+                    <ul>
+                        <li><a ui-sref="/login">Login</a></li>
+                       <li><a ui-sref="/signup">Registration</a></li>
+                       <!--  <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a href="#"><i class="fa fa-search"></i></a></li> -->
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="kode_search_box" class="kode_search_box">
+            <form class="kode_search_box-form">
+                <input class="kode_search_box-input" type="search" placeholder="Search..."/>
+                <button class="kode_search_box-submit" type="submit">Search</button>
+            </form>
+            <span class="kode_search_box-close"></span>
+        </div><!-- /kode_search_box -->         
+        <div class="overlay"></div>
+        <div class="logo-container">
+            <div class="container">
+                <!--LOGO START-->
+                <div class="logo">
+                    <a href="#"><img src="images/logo.png" alt=""></a>
+                </div>
+                <!--LOGO END-->
+                <div class="kode-navigation">
+                    <ul>
+                        <li><a ui-sref="/">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="blog.html">Our Blog</a>
+                            <ul>
+                                <li><a ui-sref="/blog-input">Blog Input</a></li>
+                                  <li><a ui-sref="/blog-view">Blog View</a></li>
+                          
+                            </ul>
+                        </li>
+                           <li><a>User</a>
+                            <ul>
+                                <li><a ui-sref="/user-input">User Input</a></li>
+                                  <li><a ui-sref="/user-view">User View</a></li>
+                                                           
+                            </ul>
+                        </li>
+                         <li><a>Books</a>
+                            <ul>
+                                <li><a ui-sref="/book-input">Books Input</a></li>
+                                <li><a ui-sref="/book-view">Books View</a></li>
+                                                       
+                            </ul>
+                        </li>
+                        <li><a href="book-listing.html">Products</a>
+                            <ul>
+                                <li><a href="book-listing.html">Products Style 1</a></li>
+                                <li><a href="book-listing-1.html">Products Style 2</a></li>
+                                <li><a href="book-listing-2.html">Products Style 3</a></li>
+                                <li><a href="book-listing-1-w-sidebar.html">Product 2 W/S</a></li>
+                                <li><a href="book-listing-2-w-sidebar.html">Product 3 W/S</a></li>                              
+                                <li><a href="book-detail.html">Product Detail</a></li>
+                            </ul>
+                        </li>
+                        <li class="last"><a href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div id="kode-responsive-navigation" class="dl-menuwrapper">
+                    <button class="dl-trigger">Open Menu</button>
+                    <ul class="dl-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li class="menu-item kode-parent-menu"><a href="blog.html">Our Blog</a>
+                            <ul class="dl-submenu">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog-full.html">Blog Full</a></li>
+                                <li><a href="blog-detail.html">Blog Detail</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item kode-parent-menu last"><a href="authors.html">Teams</a>
+                            <ul class="dl-submenu">
+                                <li><a href="authors.html">Author</a></li>
+                                <li><a href="author-detail.html">Author Detail</a></li>                             
+                            </ul>
+                        </li>
+                        <li class="menu-item kode-parent-menu last"><a href="book-listing.html">Products</a>
+                            <ul class="dl-submenu">
+                                <li><a href="book-listing.html">Products Style 1</a></li>
+                                <li><a href="book-listing-1.html">Products Style 2</a></li>
+                                <li><a href="book-listing-2.html">Products Style 3</a></li>
+                                <li><a href="book-listing-1-w-sidebar.html">Product 2 W/S</a></li>
+                                <li><a href="book-listing-2-w-sidebar.html">Product 3 W/S</a></li>                              
+                                <li><a href="book-detail.html">Product Detail</a></li>
+                            </ul>
+                        </li>
+                        <li class="last"><a href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--HEADER END-->
+    <!--BANNER START-->
+    <div class="kode-inner-banner">
+        <div class="kode-page-heading">
+            <h2>Blog</h2>
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Books Guide</a></li>
+              <li class="active">Blog</li>
+            </ol>
+        </div>
+       <!--  <div class="container">
+            <div class="banner-search">
+                <div class="row">
+                    <div class="col-md-2">
+                        <h2>Search<br> Your Books</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" placeholder="Enter Your Title">
+                    </div>
+                    <div class="col-md-2">
+                        <select></select>
+                    </div>
+                    <div class="col-md-2">
+                        <button>Search</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <!--BANNER END-->
+    <!--CONTENT START-->
+    <div class="kode-content padding-tb-50">
+        <div class="container">
+            <div class="row">
+                <!--content goes here-->
+                <div ui-view >
+  <section class="gray-bg kode-best-sellter-sec">
+            <div class="container">
+                <!--SECTION CONTENT START-->
+                <div class="section-content">
+                    <h2>Best <span>Top</span> Sellers</h2>
+                    <p>The Book Guide and the Book Library has one of the top sellers books with them. Those books which are sold with in few days and still available in our stock which you can get with us easily.</p>
+                </div>
+                <!--SECTION CONTENT END-->
+                <div class="row">
+                    <!--PRODUCT GRID START-->
+                    <div class="col-md-3">
+                        <div class="best-seller-pro">
+                            <figure>
+                                <img src="images/book2.png" alt="">
+                            </figure>
+                            <div class="kode-text">
+                                <h3>Broken Visions</h3>
+                            </div>
+                            <div class="kode-caption">
+                                <h3>Broken Visions Jessica</h3>
+                                <div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+                                <p>Jessica Sorensen</p>
+                                <p class="price">$692.20</p>
+                                <a href="#" class="add-to-cart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--PRODUCT GRID END-->
+                    <!--PRODUCT GRID START-->
+                    <div class="col-md-3">
+                        <div class="best-seller-pro">
+                            <figure>
+                                <img src="images/book6.png" alt="">
+                            </figure>
+                            <div class="kode-text">
+                                <h3><a href="#">Bridget Jones</a></h3>
+                            </div>
+                            <div class="kode-caption">
+                                <h3>Mad About the Boy</h3>
+                                <div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+                                <p>Helen Fielding</p>
+                                <p class="price">$77.70</p>
+                                <a href="#" class="add-to-cart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--PRODUCT GRID END-->
+                    <!--PRODUCT GRID START-->
+                    <div class="col-md-3">
+                        <div class="best-seller-pro">
+                            <figure>
+                                <img src="images/book3.png" alt="">
+                            </figure>
+                            <div class="kode-text">
+                                <h3><a href="#">Fairies in my FirePlace</a></h3>
+                            </div>
+                            <div class="kode-caption">
+                                <h3>Art History Mystery</h3>
+                                <div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+                                <p>R.L Naquin</p>
+                                <p class="price">$334.50</p>
+                                <a href="#" class="add-to-cart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--PRODUCT GRID END-->
+                    <!--PRODUCT GRID START-->
+                    <div class="col-md-3">
+                        <div class="best-seller-pro">
+                            <figure>
+                                <img src="images/book8.png" alt="">
+                            </figure>
+                            <div class="kode-text">
+                                <h3><a href="#">Chrysalis</a></h3>
+                            </div>
+                            <div class="kode-caption">
+                                <h3>The Brave Girl</h3>
+                                <div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+                                <p>William S.</p>
+                                <p class="price">$24.75</p>
+                                <a href="#" class="add-to-cart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--PRODUCT GRID END-->
+                </div>  
+            </div>
+        </section>
+
+ 
+
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <!--CONTENT END-->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!--TEXT WIDGET START-->
+                <div class="col-md-3">
+                    <div class="widget widget-text">
+                        <h2>About Us</h2>
+                        <p>Books are your friends, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        <ul>
+                            <li><i class="fa fa-tags"></i><p>450 fifth Avenue, 34th floor. NYC</p></li>
+                            <li><i class="fa fa-phone"></i><p>(+800) 123 4567 890</p></li>
+                            <li><i class="fa fa-envelope-o"></i><p><a href="mailto:info@bookstore.com">info@bookstore.com</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--TEXT WIDGET END-->
+                <!--TWITTER WIDGET START-->
+                <div class="col-md-3">
+                    <div class="widget widget-twitter">
+                        <h2>Latest Tweets</h2>
+                        <ul>
+                            <li>
+                                <p>There are some amazing submissions in the latest<a href="#"> @tutsplus ‘Created by you ’challenge http://t.co/duajgjahuz 16 hour ago</a></p>
+                            </li>
+                            <li>
+                                <p>There are some amazing submissions in the latest<a href="#"> @tutsplus ‘Created by you ’challenge http://t.co/duajgjahuz 16 hour ago</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--TWITTER WIDGET END-->
+                <!--CATEGORY WIDGET START-->
+                <div class="col-md-3">
+                    <div class="widget widget-categories">
+                        <h2>Information</h2>
+                        <ul>
+                            <li><a href="#">Specials</a></li> 
+                            <li><a href="#">New products</a></li> 
+                            <li><a href="#">Best sellers</a></li> 
+                            <li><a href="#">Contact us</a></li> 
+                            <li><a href="#">Terms of use</a></li> 
+                            <li><a href="#">Sitemap</a></li>  
+                        </ul>
+                    </div>
+                </div>
+                <!--CATEGORY WIDGET END-->
+                <!--NEWSLETTER START-->
+                <div class="col-md-3">
+                    <div class="widget widget-newletter">
+                        <h2>Newsletter</h2>
+                        <p>Books are your friends, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        <input type="text" placeholder="E-mail ID">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+                <!--NEWSLETTER START END-->
+            </div>
+        </div>
+    </footer>
+    <div class="copyrights">
+        <div class="container">
+            <p>Copyrights © 2015-16 KodeForest. All rights reserved</p>
+            <div class="cards"><img src="images/cards.png" alt=""></div>
+        </div>
+    </div>
+</div>
+<!--WRAPPER END-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<script src="js/bootstrap-slider.js"></script>
+<script src="js/waypoints.min.js"></script> 
+<script src="js/jquery.counterup.min.js"></script> 
+<script src="js/dl-menu/modernizr.custom.js"></script>
+<script src="js/dl-menu/jquery.dlmenu.js"></script>
+<script src="js/classie.js"></script> 
+<script src="js/functions.js"></script>
+</body>
+
+<!-- Mirrored from kodeforest.net/html/books/store/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 28 Feb 2016 19:08:57 GMT -->
+</html>

@@ -1,0 +1,39 @@
+ <div>
+ <section class="gray-bg kode-best-sellter-sec">
+            <div class="container">
+                <!--SECTION CONTENT START-->
+                <div class="section-content">
+                    <h2>Best <span>Top</span> Sellers</h2>
+                    <p>The Book Guide and the Book Library has one of the top sellers books with them. Those books which are sold with in few days and still available in our stock which you can get with us easily.</p>
+                </div>
+                <!--SECTION CONTENT END-->
+
+          
+                <div class="row" >
+               
+                    <div class="col-md-3" ng-repeat="view in bookview">
+                        <div class="best-seller-pro" {{bookview}}>
+                            <figure>
+                                <img src="images/book2.png" alt="">
+                            </figure>
+                            <div class="kode-text">
+                                <h3>{{view.title}}Broken Visions name</h3>
+                            </div>
+                            <div class="kode-caption">
+                                <h3>Broken Visions Jessica</h3>
+                                <div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+                                <p>Jessica Sorensen {{view.author}}author</p>
+                                <p class="price">{{view.price}} price</p>
+                                <a class="add-to-cart()" ui-sref="book-full({bookid:view._id})">DETAIL INFO</a>
+                            </div>
+                        </div>
+                    </div>
+                  
+               
+                   
+                </div>  
+            </div>
+        </section>
+</div>
